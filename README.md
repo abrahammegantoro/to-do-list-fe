@@ -1,50 +1,99 @@
-# React + TypeScript + Vite
+# Todo List Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive Todo List application built with React and Tailwind CSS.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- User authentication (login/register)
+- Create, read, update, and delete todos
+- Category-based organization
+- Responsive design
+- Protected routes
+- API integration with axios
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- [React](https://reactjs.org/) - JavaScript library for building user interfaces
+- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
+- [React Router](https://reactrouter.com/) - Routing library for React
+- [Axios](https://axios-http.com/) - HTTP client for API requests
+- [Vite](https://vitejs.dev/) - Next generation frontend tooling
 
-- Configure the top-level `parserOptions` property like this:
+## Prerequisites
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- Node.js (v14.0.0 or higher)
+- npm (v6.0.0 or higher)
+
+## Installation
+
+1. Clone the repository
+
+```bash
+git clone
+cd
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+2. Set up environment variables
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```bash
+cp .env.example .env
 ```
+
+Update the `.env` file with your configuration:
+
+```
+VITE_API_BASE_URL=http://localhost:8080/api/v1
+```
+
+3. Install dependencies
+
+```bash
+npm install
+```
+
+4. Start the development server
+
+```bash
+npm run dev
+```
+
+The application will start on `http://localhost:5173` (or another available port)
+
+## Available Scripts
+
+In the project directory, you can run:
+
+- `npm run dev` - Runs the app in development mode
+- `npm run build` - Builds the app for production
+- `npm run preview` - Serves the production build locally
+- `npm run lint` - Runs ESLint for code linting
+
+## Project Structure
+
+```
+src/
+├── api/            # Axios API client
+├── assets/         # Static assets
+├── components/     # Reusable UI components
+├── hooks/          # Custom hooks
+├── pages/          # Route components
+├── providers/      # Context providers
+└── App.tsx         # Root component
+```
+
+## Features Overview
+
+### Authentication
+
+- Login page
+- Registration page
+- Protected routes
+- Authentication state management
+
+### Todo Management
+
+- Todo list view
+- Create new todo
+- Edit existing todo
+- Delete todo
+- Category filtering
